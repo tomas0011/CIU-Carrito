@@ -5,20 +5,23 @@ import { Container, Nav, Navbar as ReactNavbar } from 'react-bootstrap';
 export const Navbar = ({cart, deleteFromCart, addToCart, clearCart}) => {
   return (
     <div className='Navbar'>
-      <ReactNavbar bg="light" variant="light">
+      <ReactNavbar expand="lg" className="bg-body-tertiary">
         <Container>
           <ReactNavbar.Brand className='Brand' href="#home">Tentaciones de Marcela</ReactNavbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link className='Link' href="#home">About Us</Nav.Link>
-            <Nav.Link className='Link' href="#features">Contact Me</Nav.Link>
-            <Nav.Link className='Link' href="#pricing">Admin</Nav.Link>
-          </Nav>
-          <Cart
-            cart={cart}
-            deleteFromCart={deleteFromCart}
-            addToCart={addToCart}
-            clearCart={clearCart}
-          />
+          <ReactNavbar.Toggle aria-controls="basic-navbar-nav" />
+          <ReactNavbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link className='Link' href="#home">About Us</Nav.Link>
+              <Nav.Link className='Link' href="#features">Contact Me</Nav.Link>
+              <Nav.Link className='Link' href="#pricing">Admin</Nav.Link>
+            </Nav>
+            <Cart
+              cart={cart}
+              deleteFromCart={deleteFromCart}
+              addToCart={addToCart}
+              clearCart={clearCart}
+            />
+          </ReactNavbar.Collapse>
         </Container>
       </ReactNavbar>
     </div>
