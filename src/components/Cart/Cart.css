@@ -1,0 +1,10 @@
+@import "../colors.css";
+
+.Button {
+  background-color: var(--oscuro);
+  border: var(--contraste);
+}
+
+.Button:hover {
+  background-color: var(--claro);
+}

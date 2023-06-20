@@ -1,0 +1,10 @@
+.Carousel {
+  height: 600px;
+}
+
+.CarouselImg {
+  height: 600px;
+  object-position: 50% 50%;
+  object-fit: cover;
+  overflow: clip;
+}

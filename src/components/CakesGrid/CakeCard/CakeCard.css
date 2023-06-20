@@ -1,0 +1,23 @@
+@import "../../colors.css";
+
+.CakeCard {
+  width: 30vw;
+  height: 200px;
+  display: inline-block;
+}
+
+.CakeCardImg {
+  height: inherit;
+  object-position: 50% 50%;
+  object-fit: cover;
+  overflow: clip;
+}
+
+.Button {
+  background-color: var(--oscuro);
+  border: var(--contraste);
+}
+
+.Button:hover {
+  background-color: var(--claro);
+}

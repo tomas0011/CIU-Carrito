@@ -1,0 +1,23 @@
+@import "../colors.css";
+
+.Navbar {
+  top: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1;
+}
+
+.Brand {
+  color: var(--oscuro);
+  font-size: 1.8em;
+}
+
+.Brand:hover {
+  color: var(--claro);
+  font-size: 1.8em;
+}
+
+.Link {
+  font-size: 1.3em;
+}
