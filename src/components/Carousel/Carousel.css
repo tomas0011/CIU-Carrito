@@ -1,5 +1,6 @@
 .Carousel {
   height: 600px;
+  z-index: 0;
 }
 
 .CarouselImg {

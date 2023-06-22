@@ -5,7 +5,7 @@ import { Container, Nav, Navbar as ReactNavbar } from 'react-bootstrap';
 export const Navbar = ({cart, deleteFromCart, addToCart, clearCart}) => {
   return (
     <div className='Navbar'>
-      <ReactNavbar expand="lg" className="bg-body-tertiary">
+      <ReactNavbar expand="lg" className="Navbar-nav bg-body-tertiary">
         <Container>
           <ReactNavbar.Brand className='Brand' href="#home">Tentaciones de Marcela</ReactNavbar.Brand>
           <ReactNavbar.Toggle aria-controls="basic-navbar-nav" />

@@ -1,11 +1,16 @@
 @import "../colors.css";
 
 .Navbar {
+  padding-top: 70px;
+}
+
+.Navbar-nav {
   top: 0;
   right: 0;
   left: 0;
   position: fixed;
   z-index: 1;
+  height: 70px;
 }
 
 .Brand {

@@ -10,7 +10,7 @@ const App = () => {
   let savedCakes = JSON.parse(localStorage.getItem('cakes')) || initialCakes;
   let savedCart = JSON.parse(localStorage.getItem('cart')) || [];
 
-  const [cakes, setCakes] = useState(savedCakes);
+  const [cakes] = useState(savedCakes);
   const [cart, setCart] = useState(savedCart);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const App = () => {
   const addToCart = (newCartItem) => {
     const cakeFound = cart.find((cake) => cake.id === newCartItem.id);
     if (cakeFound) {
-      setCart(cart.map((cartItem) => cartItem.id == newCartItem.id
+      setCart(cart.map((cartItem) => cartItem.id === newCartItem.id
         ? {...cartItem, quantity: cakeFound.quantity + 1 }
         : cartItem
       ));
@@ -37,7 +37,7 @@ const App = () => {
     const cakeFound = cart.find((cake) => cake.id === cartItemToDelete.id);
     if (cakeFound) {
       if (cakeFound.quantity > 1) {
-        setCart(cart.map((cartItem) => cartItem.id == cartItemToDelete.id
+        setCart(cart.map((cartItem) => cartItem.id === cartItemToDelete.id
           ? {...cartItem, quantity: cakeFound.quantity - 1 }
           : cartItem
         ));
