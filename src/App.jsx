@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import './App.css';
 import { initialCakes } from './stubs/initialCakes'
 import { Navbar } from './components/Navbar/Navbar';
@@ -7,9 +7,19 @@ import { CakesGrid } from './components/CakesGrid/CakesGrid';
 import { Footer } from './components/Footer/Footer';
 
 const App = () => {
-  const [cakes, setCakes] = useState(initialCakes);
-  
-  const [cart, setCart] = useState([]);
+  let savedCakes = JSON.parse(localStorage.getItem('cakes')) || initialCakes;
+  let savedCart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  const [cakes, setCakes] = useState(savedCakes);
+  const [cart, setCart] = useState(savedCart);
+
+  useEffect(() => {
+    localStorage.setItem('cakes', JSON.stringify(cakes));
+  }, [cakes]);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
 
   const addToCart = (newCartItem) => {
     const cakeFound = cart.find((cake) => cake.id === newCartItem.id);
